@@ -45,13 +45,15 @@
                 // and this.settings
                 // you can add more functions like the one below and
                 // call them like the example below
+                //this.setTable();
                 this.setText( "jQuery Boilerplate" );
             },
-            setText: function( text ) {
-
-                // some logic
-                $( this.element ).text( text );
-            }
+            setTable: function(){
+                $( this.element ).replaceWith( "<table></table>" );
+            },
+            setText: function(tett){
+                $( this.element ).text(tett);
+            },
         } );
 
         // A really lightweight plugin wrapper around the constructor,
