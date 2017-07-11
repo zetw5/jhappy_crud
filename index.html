@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jHappy Crud</title>
-
+	<style>
+		*{
+			outline: 1px dotted red;
+		}
+	</style>
 </head>
 <body>
 <h1>jHappy Crud</h1>
@@ -21,7 +25,10 @@
  $(document).on('ready',main());
 
  function main(){
- 	$('#table,#table2').jhappycrud();
+ 	$('#table,#table2').jhappycrud({
+ 		title: 'Mi titulo para mi tabla',
+ 		source: "Fuente"
+ 	});
  }
  	
  </script>	

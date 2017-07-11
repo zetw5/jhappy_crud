@@ -24,7 +24,17 @@
         // Create the defaults once
         var pluginName = "jhappycrud",
             defaults = {
-                propertyName: "value"
+                title: "jHappy Crud",
+                source: "html", // html json
+                data: "", // url source
+                mode: {
+                    edit: "modal", //modal inline
+                    delete: "modal", //modal inline
+                }, //modal inline
+                buttons:{
+                    edit: "text", // text icon icontext
+                    delete: "text", // text icon icontext
+                }
             };
 
         // The actual plugin constructor
@@ -51,12 +61,28 @@
                 // and this.settings
                 // you can add more functions like the one below and
                 // call them like the example bellow
-                this.yourOtherFunction( "jQuery Boilerplate" );
+                //this.yourOtherFunction( "jQuery Boilerplate" );
+                this.createTable();
+                this.crateTitle();
+                this.createHead();
+                this.createRow();
             },
             yourOtherFunction: function( text ) {
 
                 // some logic
                 $( this.element ).text( text );
+            },
+            crateTitle: function(){
+                $( this.element ).prepend('<h1>'+this.settings.title+this.settings.source+'</h1>');
+            },
+            createTable: function(){
+                $( this.element ).prepend('<table style="width:100%"></table>');
+            },
+            createHead: function(){
+                $( this.element ).children().eq(1).prepend('<tr><th>value</th><th>Lastname</th><th>Age</th></tr>');
+            },
+            createRow: function(){
+                $( this.element ).children().eq(1).append('<tr><td>Eve</td><td>Jackson</td><td>94</td></tr>');
             }
         } );
 
